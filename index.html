@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kidz Bop Kids - Community, Fun, Together!">
+    <title>Kidz Bop Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <h1>Kidz Bop Kids</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#announcements" class="nav-link">Announcements</a></li>
+                <li><a href="#meetings" class="nav-link">Meetings</a></li>
+                <li><a href="#rules" class="nav-link">Rules</a></li>
+                <li><a href="#roles" class="nav-link">Roles</a></li>
+                <li><a href="#suggestions" class="nav-link">Suggestions</a></li>
+                <li><a href="admin.html" class="nav-link">Admin Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="hero">
+                <h2>Kidz Bop Kids</h2>
+                <p class="tagline">Community, Fun, Together!</p>
+                <p class="welcome-text">Welcome to the official hub for our iMessage group. Stay connected, informed, and engaged with announcements, meetings, and group guidelines.</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">📢</div>
+                    <h3>Latest Announcement</h3>
+                    <p id="latestAnnouncement">No announcements yet</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <h3>Next Meeting</h3>
+                    <p id="nextMeeting">No upcoming meetings</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3>Leadership Team</h3>
+                    <p>8 dedicated members</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <div class="link-buttons">
+                    <a href="#announcements" class="btn btn-secondary">View Announcements</a>
+                    <a href="#meetings" class="btn btn-secondary">View Meetings</a>
+                    <a href="#rules" class="btn btn-secondary">Read Rules</a>
+                    <a href="#roles" class="btn btn-secondary">Meet Leadership</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Announcements Section -->
+        <section id="announcements" class="section">
+            <h2>Announcements</h2>
+            <div id="announcementsList" class="cards-container">
+                <!-- Announcements will be populated by JavaScript -->
+            </div>
+            <p class="empty-state" id="announcementsEmpty">No announcements yet. Check back soon!</p>
+        </section>
+
+        <!-- Meetings Section -->
+        <section id="meetings" class="section">
+            <h2>Meetings</h2>
+            <div id="meetingsList" class="cards-container">
+                <!-- Meetings will be populated by JavaScript -->
+            </div>
+            <p class="empty-state" id="meetingsEmpty">No upcoming meetings scheduled.</p>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="section">
+            <h2>Group Rules</h2>
+            <div class="rules-container">
+                <ol class="rules-list">
+                    <li>
+                        <strong>Respect everyone.</strong>
+                        <p>Treat all members with kindness and consideration.</p>
+                    </li>
+                    <li>
+                        <strong>No personal business or personal questions.</strong>
+                        <p>Questions about someone's food, parents, private plans, family life, or other personal matters are not appropriate for the group. Keep conversations focused on group activities and announcements.</p>
+                    </li>
+                    <li>
+                        <strong>No spamming.</strong>
+                        <p>Avoid excessive messages, memes, or off-topic content.</p>
+                    </li>
+                    <li>
+                        <strong>Stay on topic.</strong>
+                        <p>Keep discussions relevant to Kidz Bop Kids activities and announcements.</p>
+                    </li>
+                    <li>
+                        <strong>Do not share private information.</strong>
+                        <p>Never share phone numbers, addresses, or personal details of group members.</p>
+                    </li>
+                    <li>
+                        <strong>Respect meetings.</strong>
+                        <p>Attend on time and be fully present during group meetings.</p>
+                    </li>
+                    <li>
+                        <strong>No fake announcements.</strong>
+                        <p>Only verified members can make official announcements. Do not impersonate leadership.</p>
+                    </li>
+                    <li>
+                        <strong>Do not start unnecessary arguments.</strong>
+                        <p>Disagreements happen, but keep discussions respectful and constructive.</p>
+                    </li>
+                    <li>
+                        <strong>Do not abuse your role.</strong>
+                        <p>If you hold a leadership position, use your responsibilities wisely and fairly.</p>
+                    </li>
+                    <li>
+                        <strong>Follow the rules.</strong>
+                        <p>These guidelines make our community better for everyone. Please follow them.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Roles Section -->
+        <section id="roles" class="section">
+            <h2>Leadership Team</h2>
+            <div class="roles-container">
+                <div class="role-card">
+                    <div class="role-badge">👑</div>
+                    <h3>Kafura</h3>
+                    <p class="role-title">President</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">⭐</div>
+                    <h3>Heeran</h3>
+                    <p class="role-title">Vice President</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">🎯</div>
+                    <h3>Iman</h3>
+                    <p class="role-title">Chief Advisor</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">📋</div>
+                    <h3>Hilani</h3>
+                    <p class="role-title">Secretary</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">📣</div>
+                    <h3>Ayuub</h3>
+                    <p class="role-title">Communications</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">🛡️</div>
+                    <h3>Shuaybe</h3>
+                    <p class="role-title">Security</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">💡</div>
+                    <h3>Ansar</h3>
+                    <p class="role-title">Ideas Director</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-badge">🎉</div>
+                    <h3>Imad</h3>
+                    <p class="role-title">Events Director</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggestions Section -->
+        <section id="suggestions" class="section">
+            <h2>Suggestions</h2>
+            <p class="section-description">Have an idea for the group? Share your suggestion anonymously below. Responses are saved locally in this demo version.</p>
+            <div class="demo-notice">
+                <strong>⚠️ Demo Notice:</strong> This suggestion form saves data locally on your device. For a production version with a real admin panel, we will implement secure backend submission with authentication for the President and Vice President.
+            </div>
+            
+            <form id="suggestionForm" class="suggestion-form">
+                <div class="form-group">
+                    <label for="suggestionText">Your Suggestion</label>
+                    <textarea 
+                        id="suggestionText" 
+                        name="suggestion" 
+                        placeholder="Share your idea, feedback, or suggestion for Kidz Bop Kids..."
+                        rows="8"
+                        required
+                        aria-label="Suggestion text area"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Submit Suggestion</button>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                ✓ Thank you! Your suggestion has been received and saved locally.
+            </div>
+
+            <!-- Display saved suggestions (local storage) -->
+            <div id="suggestionsDisplay" class="suggestions-display">
+                <h3>Recent Suggestions</h3>
+                <div id="suggestionsList"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Kidz Bop Kids. All rights reserved.</p>
+        <p class="footer-note">This is a static website hosted on GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
