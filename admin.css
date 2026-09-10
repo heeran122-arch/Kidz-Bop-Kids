@@ -1,0 +1,601 @@
+/* ============================================
+   KIDZ BOP KIDS - ADMIN PANEL STYLESHEET
+   Dark, Modern, Mobile-First Design
+   ============================================ */
+
+/* ============================================
+   ADMIN PAGE OVERRIDES
+   ============================================ */
+
+.admin-page {
+    background-color: var(--dark-bg);
+}
+
+/* ============================================
+   LOGIN SCREEN
+   ============================================ */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-secondary) 100%);
+}
+
+.login-box {
+    background-color: var(--dark-bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.6s ease-in;
+}
+
+.login-box h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-base);
+}
+
+.login-form {
+    margin-bottom: var(--spacing-lg);
+}
+
+.login-form .form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.login-form .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.login-form .form-group input {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-base);
+}
+
+.login-form .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.login-form .form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.login-error {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+    border: 1px solid var(--error-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    color: #fca5a5;
+    margin-bottom: var(--spacing-lg);
+    animation: slideUp 0.3s ease-in;
+}
+
+.login-note {
+    background-color: rgba(245, 158, 11, 0.05);
+    border: 1px solid var(--warning-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    color: #fcd34d;
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-top: var(--spacing-lg);
+}
+
+.login-note strong {
+    color: var(--warning-color);
+}
+
+/* ============================================
+   ADMIN NAVBAR
+   ============================================ */
+
+.admin-navbar {
+    background-color: var(--dark-bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.admin-navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.admin-brand h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+#adminWelcome {
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#logoutBtn {
+    min-width: 100px;
+}
+
+/* ============================================
+   ADMIN DASHBOARD LAYOUT
+   ============================================ */
+
+.admin-dashboard {
+    background-color: var(--dark-bg);
+}
+
+.admin-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.admin-section {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-section:last-child {
+    border-bottom: none;
+}
+
+.admin-section h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary);
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.admin-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-sm);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section-header h2::after {
+    display: none;
+}
+
+.suggestion-count {
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+}
+
+/* ============================================
+   ADMIN STATS
+   ============================================ */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.admin-stat-card {
+    background-color: var(--dark-bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.admin-stat-card:hover {
+    background-color: var(--dark-bg-tertiary);
+    border-color: var(--primary-color);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+/* ============================================
+   ADMIN FORMS
+   ============================================ */
+
+.admin-form {
+    background-color: var(--dark-bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    animation: slideUp 0.4s ease-in;
+}
+
+.admin-form h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.admin-form .form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.admin-form .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.admin-form .form-group input,
+.admin-form .form-group textarea,
+.admin-form .form-group select {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-base);
+    resize: vertical;
+}
+
+.admin-form .form-group input:focus,
+.admin-form .form-group textarea:focus,
+.admin-form .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.admin-form .form-group input::placeholder,
+.admin-form .form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.admin-form .form-group select {
+    cursor: pointer;
+}
+
+.admin-form .form-group select option {
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.form-actions button {
+    flex: 1;
+    min-height: 48px;
+}
+
+/* ============================================
+   ADMIN ITEMS LIST
+   ============================================ */
+
+.admin-items-list {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.admin-item {
+    background-color: var(--dark-bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+    animation: slideUp 0.4s ease-in;
+}
+
+.admin-item:hover {
+    background-color: var(--dark-bg-tertiary);
+    border-color: var(--primary-color);
+}
+
+.admin-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-md);
+}
+
+.admin-item-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.admin-item-meta {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.admin-item-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    word-break: break-word;
+}
+
+.admin-item-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.admin-item-actions button {
+    flex: 1;
+    min-width: 100px;
+    min-height: 40px;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.btn-edit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-edit:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-delete {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+.empty-list-message {
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--spacing-2xl);
+    font-size: var(--font-size-base);
+}
+
+/* ============================================
+   SUGGESTION ITEM SPECIFIC
+   ============================================ */
+
+.suggestion-item {
+    background-color: var(--dark-bg-secondary);
+    border-left: 4px solid var(--secondary-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+    animation: slideUp 0.4s ease-in;
+}
+
+.suggestion-item:hover {
+    background-color: var(--dark-bg-tertiary);
+    border-left-color: var(--accent-color);
+}
+
+.suggestion-text {
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-md) 0;
+    font-style: italic;
+    line-height: 1.8;
+    word-break: break-word;
+}
+
+.suggestion-time {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .login-box {
+        padding: var(--spacing-xl);
+    }
+
+    .admin-navbar-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .admin-user-info {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #logoutBtn {
+        width: 100%;
+    }
+
+    .admin-main {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-header button {
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .admin-item-header {
+        flex-direction: column;
+    }
+
+    .admin-item-actions {
+        width: 100%;
+    }
+
+    .admin-item-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-2xl: 1.25rem;
+    }
+
+    .login-box {
+        padding: var(--spacing-lg);
+    }
+
+    .login-box h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .admin-brand h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    #adminWelcome {
+        font-size: var(--font-size-sm);
+    }
+
+    .admin-main {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .admin-form {
+        padding: var(--spacing-lg);
+    }
+
+    .admin-item {
+        padding: var(--spacing-md);
+    }
+
+    .admin-item-title {
+        font-size: var(--font-size-base);
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-contrast: more) {
+    .admin-form,
+    .admin-item,
+    .admin-stat-card {
+        border-width: 2px;
+    }
+}
