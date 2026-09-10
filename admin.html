@@ -87,6 +87,10 @@
                             <div class="stat-number" id="totalSuggestions">0</div>
                             <p class="stat-label">Suggestions Received</p>
                         </div>
+                        <div class="admin-stat-card">
+                            <div class="stat-number" id="logCount">0</div>
+                            <p class="stat-label">Activity Logs</p>
+                        </div>
                     </div>
                 </section>
 
@@ -192,6 +196,29 @@
                     <!-- Suggestions List -->
                     <div id="suggestionsList" class="admin-items-list"></div>
                 </section>
+
+                <!-- Activity Logs Section -->
+                <section class="admin-section" id="logsSection">
+                    <div class="section-header">
+                        <h2>Activity Logs</h2>
+                        <div class="log-actions">
+                            <button class="btn btn-secondary" onclick="downloadLogs()" title="Download logs">📥 Download</button>
+                            <button class="btn btn-secondary" onclick="clearAllLogs()" title="Clear logs">🗑️ Clear</button>
+                        </div>
+                    </div>
+                    <div id="activityLogContainer" class="activity-log-container"></div>
+                </section>
+
+                <!-- Login History Section -->
+                <section class="admin-section">
+                    <div class="section-header">
+                        <h2>Login History</h2>
+                        <div class="log-actions">
+                            <button class="btn btn-secondary" onclick="clearLoginHistory()" title="Clear login history">🗑️ Clear</button>
+                        </div>
+                    </div>
+                    <div id="loginHistoryContainer" class="login-history-container"></div>
+                </section>
             </main>
 
             <!-- AI Assistant Panel -->
@@ -247,5 +274,6 @@
     <script src="script.js"></script>
     <script src="admin.js"></script>
     <script src="assistant.js"></script>
+    <script src="logs.js"></script>
 </body>
 </html>
