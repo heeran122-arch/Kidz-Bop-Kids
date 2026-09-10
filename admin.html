@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kidz Bop Kids Admin Panel">
+    <title>Kidz Bop Kids Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+    <!-- Admin Login Screen -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-box">
+            <h1>Kidz Bop Kids Admin</h1>
+            <p class="login-subtitle">Admin Dashboard Login</p>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="adminName">Name</label>
+                    <input 
+                        type="text" 
+                        id="adminName" 
+                        name="name" 
+                        placeholder="Enter your name"
+                        required
+                        aria-label="Admin name"
+                        autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="adminPassword" 
+                        name="password" 
+                        placeholder="Enter password"
+                        required
+                        aria-label="Admin password"
+                        autocomplete="off">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+
+            <div id="loginError" class="login-error" style="display: none;"></div>
+
+            <p class="login-note">
+                ⚠️ <strong>Demo Notice:</strong> This is a simple client-side login for demonstration. 
+                In production, use a secure backend authentication system.
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+        <!-- Admin Navigation -->
+        <nav class="admin-navbar">
+            <div class="admin-navbar-container">
+                <div class="admin-brand">
+                    <h1>Kidz Bop Kids Admin</h1>
+                </div>
+                <div class="admin-user-info">
+                    <span id="adminWelcome">Welcome, Admin</span>
+                    <button id="logoutBtn" class="btn btn-secondary" aria-label="Logout">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Overview -->
+            <section class="admin-section">
+                <h2>Dashboard Overview</h2>
+                <div class="admin-stats">
+                    <div class="admin-stat-card">
+                        <div class="stat-number" id="totalAnnouncements">0</div>
+                        <p class="stat-label">Total Announcements</p>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-number" id="totalMeetings">0</div>
+                        <p class="stat-label">Upcoming Meetings</p>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-number" id="totalSuggestions">0</div>
+                        <p class="stat-label">Suggestions Received</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Announcements Section -->
+            <section class="admin-section">
+                <div class="section-header">
+                    <h2>Announcements</h2>
+                    <button id="createAnnouncementBtn" class="btn btn-primary" aria-label="Create new announcement">+ New Announcement</button>
+                </div>
+
+                <!-- Create/Edit Announcement Form -->
+                <div id="announcementForm" class="admin-form" style="display: none;">
+                    <h3 id="announcementFormTitle">Create Announcement</h3>
+                    <form id="announcementFormElement">
+                        <div class="form-group">
+                            <label for="announcementTitle">Title</label>
+                            <input type="text" id="announcementTitle" required placeholder="Announcement title" aria-label="Announcement title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="announcementContent">Description</label>
+                            <textarea id="announcementContent" required placeholder="Announcement details" rows="6" aria-label="Announcement description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="announcementDate">Date</label>
+                            <input type="date" id="announcementDate" required aria-label="Announcement date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="announcementPriority">Priority</label>
+                            <select id="announcementPriority" aria-label="Announcement priority">
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="announcementSaveBtn">Save Announcement</button>
+                            <button type="button" class="btn btn-secondary" id="announcementCancelBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Announcements List -->
+                <div id="announcementsList" class="admin-items-list"></div>
+            </section>
+
+            <!-- Meetings Section -->
+            <section class="admin-section">
+                <div class="section-header">
+                    <h2>Meetings</h2>
+                    <button id="createMeetingBtn" class="btn btn-primary" aria-label="Create new meeting">+ New Meeting</button>
+                </div>
+
+                <!-- Create/Edit Meeting Form -->
+                <div id="meetingForm" class="admin-form" style="display: none;">
+                    <h3 id="meetingFormTitle">Create Meeting</h3>
+                    <form id="meetingFormElement">
+                        <div class="form-group">
+                            <label for="meetingTitle">Meeting Title</label>
+                            <input type="text" id="meetingTitle" required placeholder="Meeting title" aria-label="Meeting title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meetingDate">Date</label>
+                            <input type="date" id="meetingDate" required aria-label="Meeting date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meetingTime">Time</label>
+                            <input type="time" id="meetingTime" required aria-label="Meeting time">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meetingLocation">Location/Platform</label>
+                            <input type="text" id="meetingLocation" placeholder="e.g., iMessage, Zoom, In-Person" aria-label="Meeting location">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meetingDetails">Notes</label>
+                            <textarea id="meetingDetails" placeholder="Meeting details and agenda" rows="6" aria-label="Meeting details"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="meetingSaveBtn">Save Meeting</button>
+                            <button type="button" class="btn btn-secondary" id="meetingCancelBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Meetings List -->
+                <div id="meetingsList" class="admin-items-list"></div>
+            </section>
+
+            <!-- Suggestions Section -->
+            <section class="admin-section">
+                <div class="section-header">
+                    <h2>Suggestions</h2>
+                    <span class="suggestion-count" id="suggestionCount">(0)</span>
+                </div>
+
+                <!-- Suggestions List -->
+                <div id="suggestionsList" class="admin-items-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
