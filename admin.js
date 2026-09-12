@@ -8,11 +8,11 @@
 // ============================================
 
 const ADMIN_CREDENTIALS = {
-    Kafura: {
+    heeran: {
         password: 'KBK_Admin_2026!',
         role: 'President'
     },
-    Heeran: {
+    Hkafura: {
         password: 'KBK_Admin_2026!',
         role: 'Vice President'
     }
